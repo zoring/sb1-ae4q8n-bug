@@ -1,0 +1,242 @@
+/* 玩家基础样式 */
+.player {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  transition: transform 0.2s ease;
+}
+
+/* 玩家身体部件 */
+.player-body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.player-head {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 16px;
+  background-color: #ffdbac;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.player-helmet {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  z-index: 3;
+}
+
+.player-torso {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 14px;
+  background-color: #ff0000;
+  z-index: 1;
+}
+
+.player-armor {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 14px;
+  background-size: contain;
+  z-index: 2;
+}
+
+.player-legs {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.player-leg {
+  width: 6px;
+  height: 100%;
+  background-color: #0000ff;
+}
+
+.player-pants {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 10px;
+  background-size: contain;
+  z-index: 2;
+}
+
+.player-arms {
+  position: absolute;
+  top: 8px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+.player-arm {
+  width: 6px;
+  height: 14px;
+  background-color: #ffdbac;
+}
+
+.player-weapon {
+  position: absolute;
+  top: 8px;
+  right: -12px;
+  width: 12px;
+  height: 20px;
+  background-size: contain;
+  transform: rotate(-45deg);
+  z-index: 3;
+}
+
+/* 装备效果 */
+.equipment-glow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+.equipment-common { box-shadow: 0 0 5px #ffffff; }
+.equipment-uncommon { box-shadow: 0 0 5px #1eff00; }
+.equipment-rare { box-shadow: 0 0 5px #0070dd; }
+.equipment-epic { box-shadow: 0 0 5px #a335ee; }
+.equipment-legendary { box-shadow: 0 0 5px #ff8000; }
+
+@keyframes glow {
+  from { opacity: 0.5; }
+  to { opacity: 1; }
+}
+
+/* 玩家状态UI */
+.player-name {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ffffff;
+  font-size: 14px;
+  white-space: nowrap;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.player-health-bar {
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #666;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.player-health-fill {
+  height: 100%;
+  background-color: #4CAF50;
+  transition: width 0.3s ease;
+}
+
+.player-health-fill.warning {
+  background-color: #FFC107;
+}
+
+.player-health-fill.danger {
+  background-color: #f44336;
+}
+
+.player-buffs {
+  position: absolute;
+  top: -30px;
+  left: 0;
+  display: flex;
+  gap: 4px;
+}
+
+.player-buff {
+  font-size: 12px;
+  color: #2196F3;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* 宠物样式 */
+.pet {
+  position: absolute;
+  pointer-events: none;
+}
+
+.pet-sprite {
+  font-size: 24px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.pet-name {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ffffff;
+  font-size: 12px;
+  white-space: nowrap;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.pet-stats {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+}
+
+.pet-stat-bar {
+  width: 100%;
+  height: 3px;
+  background-color: #666;
+  border-radius: 2px;
+  margin-bottom: 4px;
+  overflow: hidden;
+}
+
+.pet-health-fill {
+  height: 100%;
+  background-color: #4CAF50;
+  transition: width 0.3s ease;
+}
+
+.pet-hunger-fill {
+  height: 100%;
+  background-color: #FFC107;
+  transition: width 0.3s ease;
+}
+
+.pet-mood-fill {
+  height: 100%;
+  background-color: #E91E63;
+  transition: width 0.3s ease;
+}

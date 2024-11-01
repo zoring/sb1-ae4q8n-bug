@@ -1,0 +1,87 @@
+.buildings-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.building {
+  position: absolute;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  pointer-events: auto;
+}
+
+.building:hover {
+  transform: scale(1.05);
+}
+
+.building-name {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ffffff;
+  font-size: 14px;
+  white-space: nowrap;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.building-sprite {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+}
+
+.building-tooltip {
+  position: absolute;
+  left: 50%;
+  top: -80px;
+  transform: translateX(-50%);
+  width: 200px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 2px solid #4CAF50;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 14px;
+  text-align: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 100;
+}
+
+.building:hover .building-tooltip {
+  opacity: 1;
+}
+
+.building-shop { background-color: #795548; }
+.building-inn { background-color: #8d6e63; }
+.building-blacksmith { background-color: #6d4c41; }
+.building-storage { background-color: #5d4037; }
+.building-decoration { background-color: #4e342e; }
+
+.building-level {
+  position: absolute;
+  bottom: -15px;
+  right: -15px;
+  background-color: #FFC107;
+  color: #000000;
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.building-effect {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 16px;
+  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.5));
+}
